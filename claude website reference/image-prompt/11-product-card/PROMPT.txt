@@ -1,0 +1,13 @@
+Edit image 1, a row of three product cards from the Ctrl P website.
+
+The picture: replace each photograph with the same product shown as a clean studio cut-out, straight on, centred, on a flat panel of that card's category colour: sunglow yellow for the poster, rose pink for the stickers, royal blue for the t-shirt. The product fills no more than 60 percent of the panel, with empty colour all around it. Soft, even light, a barely visible contact shadow, no props, no hands, no background scene. The products are real, photographed objects, not illustrations: a poster sheet, a set of die-cut stickers, a folded white t-shirt with a print on the chest. Their artwork is simple flat shapes in the Ctrl P brand colours from image 4.
+
+Subtle changes to the card, to make it more creative. Use these and nothing more:
+- One short strip of white paper tape holds each product to its panel at the top, slightly off-centre and at a slight angle, different on each card.
+- A dotted tear line with a small semicircular notch at each end separates the picture from the information below, like a ticket.
+- The starting price sits on a small white price tag: a rectangle with one pointed end and a punched hole.
+- Slightly more space between the product name, the description and the row of three facts.
+
+Do not change: the wording, the fonts, the heart button, the tape flag, the category pill, the three facts and the Add to cart button. No drop shadows. Add no text. No characters or mascots on the cards.
+
+Output: same width and framing as image 1 (it may be a little taller if the cards need the room), crisp and high resolution.

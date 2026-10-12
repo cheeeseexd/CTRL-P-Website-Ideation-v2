@@ -1,0 +1,85 @@
+  <main id="main">
+
+    <!-- Page head -->
+    <section class="shop-head">
+      <div class="wrap">
+        <h1 class="display">Everything <span class="taped">we print.</span></h1>
+        <p class="lead">Twelve products to start with. Pick one, add your photo or art, and order as few as one.</p>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="shop" id="shop">
+      <div class="wrap">
+
+        <div class="tools" id="search">
+          <label class="search">
+            {{I:search}}
+            <input type="search" placeholder="Search posters, stickers, tees" aria-label="Search products" data-search-input>
+          </label>
+          <div class="tools__toggles" role="group" aria-label="Show only">
+            <button class="toggle" type="button" aria-pressed="false" data-flag="sale" style="--c:var(--coral); --on:var(--paper)">On offer</button>
+            <button class="toggle" type="button" aria-pressed="false" data-flag="new" style="--c:var(--sunglow)">New</button>
+            <button class="toggle" type="button" aria-pressed="false" data-flag="bulk" style="--c:var(--turquoise)">Bulk rates</button>
+          </div>
+          <label class="sort">
+            <span>Sort by</span>
+            <select data-sort>
+              <option value="featured">Featured</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="new">Newest</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+            {{Is:chevron-down}}
+          </label>
+        </div>
+
+        <div class="shop__bar">
+          <div class="chips" role="group" aria-label="Filter by category">
+{{CHIPS}}
+          </div>
+          <p class="shop__count" aria-live="polite"><span data-count>{{COUNT}}</span> <span data-count-label>products</span><button class="shop__clear" type="button" data-clear hidden>Clear filters</button></p>
+        </div>
+
+        <div class="grid shop__grid" data-products>
+
+{{CARDS}}
+
+        </div>
+
+        <div class="shop__empty" data-empty hidden>
+          <p class="h2">Nothing matches <span class="taped">that.</span></p>
+          <p class="lead">Try a different search, or clear the filters to see everything.</p>
+          <button class="btn" type="button" data-clear><span>Clear filters</span></button>
+        </div>
+
+        <p class="shop__end" data-shop-end>{{I:check}}That&rsquo;s all {{COUNT}}. Each one can be ordered as a single piece.</p>
+      </div>
+    </section>
+
+    <!-- Custom request -->
+    <section class="custom">
+      <div class="wrap grid">
+        <div class="custom__copy">
+          <h2 class="h2">Can&rsquo;t find <span class="taped" style="--c:var(--ink)">it here?</span></h2>
+          <p class="lead">If it can hold ink, tell us about it. We&rsquo;ll say whether we can print it and what it would cost.</p>
+          <a class="btn btn--large" href="help.html#contact">
+            <span>Request a custom print</span>
+            {{I:arrow-right}}
+          </a>
+        </div>
+        <div class="custom__art" aria-hidden="true">
+          <img src="assets/img/cutouts/posters.webp" width="900" height="863" loading="lazy" alt="">
+          <svg class="stamp" viewBox="0 0 200 200">
+            <defs><path id="stamp-ring" d="M100 100m-70 0a70 70 0 1 1 140 0a70 70 0 1 1-140 0"/></defs>
+            <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <text font-size="17"><textPath href="#stamp-ring" textLength="430">From pixel to paper &#8226; Printed to order &#8226;</textPath></text>
+            <g transform="translate(64 64) scale(3)" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.25 4.5v9L12 21l-8.25-4.5v-9z"/><path d="m3.75 7.5 8.25 4.5 8.25-4.5M12 12v9"/><path d="m7.9 5.25 8.25 4.5v3"/></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+  </main>

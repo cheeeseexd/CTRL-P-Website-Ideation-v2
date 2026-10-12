@@ -1,0 +1,110 @@
+  <main id="main">
+
+    <section class="brands brands--page">
+      <div class="wrap grid">
+        <div class="brands__copy">
+          <h1 class="display">Printing for a <span class="taped" style="--c:var(--turquoise); --on:var(--ink)">brand?</span></h1>
+          <p class="lead">Cafes, home bakers, clothing labels and college clubs print with us too. Prices drop as the quantity climbs, and there&rsquo;s still no minimum.</p>
+          <ul class="tapes" aria-label="Who prints with us">
+            <li class="flag" style="--c:var(--sunglow)">Cafes</li>
+            <li class="flag" style="--c:var(--rose); --on:var(--paper)">Home bakers</li>
+            <li class="flag" style="--c:var(--royal); --on:var(--paper)">Clothing labels</li>
+            <li class="flag" style="--c:var(--turquoise)">College clubs</li>
+          </ul>
+          <a class="btn btn--large" href="#quote"><span>Ask for a bulk quote</span>{{I:arrow-right}}</a>
+        </div>
+        <div class="brands__stage">
+          <span class="brands__tape" aria-hidden="true"></span>
+          <img class="brands__photo" src="assets/img/cutouts/boxes.webp" width="842" height="848" alt="Two stacked Ctrl P shipping boxes sealed with printed tape, each carrying a product label and stickers">
+          <div class="ladder" aria-label="Bulk pricing">
+            <p class="ladder__title">The more you print</p>
+            <ol>
+              <li style="--w:100%"><span>1 to 9</span><b>Full price</b></li>
+              <li style="--w:90%"><span>10 to 49</span><b>10% off each</b></li>
+              <li style="--w:80%"><span>50 or more</span><b>20% off each</b></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What brands print -->
+    <section class="kit">
+      <div class="wrap">
+        <h2 class="h2" data-reveal>What brands <span class="taped" style="--c:var(--coral)">print.</span></h2>
+        <ul class="grid kit__grid">
+          <li class="kit__item" style="--c:var(--coral); --on:var(--paper)" data-reveal>
+            <a href="products.html#packaging">
+              <img src="assets/img/cutouts/box-tape.webp" width="900" height="593" loading="lazy" alt="">
+              <span class="kit__name">Packaging</span>
+              <span class="kit__text">Mailer boxes and tape by the roll.</span>
+              <span class="kit__from">from {{P:199}}{{Is:arrow-right}}</span>
+            </a>
+          </li>
+          <li class="kit__item" style="--c:var(--turquoise); --d:1" data-reveal>
+            <a href="products.html#cards">
+              <img src="assets/img/photos/cards-white.webp" width="1376" height="768" loading="lazy" alt="">
+              <span class="kit__name">Cards</span>
+              <span class="kit__text">Business cards and thank-you notes.</span>
+              <span class="kit__from">from {{P:129}}{{Is:arrow-right}}</span>
+            </a>
+          </li>
+          <li class="kit__item" style="--c:var(--rose); --on:var(--paper); --d:2" data-reveal>
+            <a href="products.html#stickers">
+              <img src="assets/img/cutouts/sticker-pack.webp" width="658" height="657" loading="lazy" alt="">
+              <span class="kit__name">Stickers</span>
+              <span class="kit__text">Singles, sheets and bagged packs.</span>
+              <span class="kit__from">from {{P:99}}{{Is:arrow-right}}</span>
+            </a>
+          </li>
+          <li class="kit__item" style="--c:var(--royal); --on:var(--paper); --d:3" data-reveal>
+            <a href="products.html#merch">
+              <img src="assets/img/cutouts/tote.webp" width="736" height="747" loading="lazy" alt="">
+              <span class="kit__name">Merch</span>
+              <span class="kit__text">Tees and totes for the team.</span>
+              <span class="kit__from">from {{P:299}}{{Is:arrow-right}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Quote request -->
+    <section class="band band--tint quote" id="quote">
+      <div class="wrap grid">
+        <div class="quote__copy">
+          <h2 class="h2">Ask for a <span class="taped" style="--c:var(--turquoise); --on:var(--ink)">quote.</span></h2>
+          <p class="lead">Tell us what you need and roughly how many. We&rsquo;ll come back with a price.</p>
+          <ul class="ticks">
+            <li>{{I:check}}No minimum order</li>
+            <li>{{I:check}}Bulk pricing from 10 pieces</li>
+            <li>{{I:check}}Ships across India</li>
+          </ul>
+        </div>
+        <form class="block quote__form" data-demo-form novalidate>
+          <div class="block__fields">
+            <label class="input"><span>Your name</span><input type="text" name="name" autocomplete="name" required></label>
+            <label class="input"><span>Brand or business</span><input type="text" name="brand" autocomplete="organization" required></label>
+            <label class="input"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+            <label class="input"><span>Phone</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
+            <label class="input"><span>What you need</span>
+              <select name="what" required>
+                <option value="">Choose one</option>
+                <option>Packaging</option><option>Cards</option><option>Stickers</option><option>Merch</option><option>Posters</option><option>Booklets</option><option>Something else</option>
+              </select>
+            </label>
+            <label class="input"><span>Roughly how many</span><input type="number" name="qty" min="1" inputmode="numeric" required></label>
+            <label class="input input--wide"><span>Anything else we should know</span><textarea name="notes" rows="4"></textarea></label>
+          </div>
+          <p class="checkout__error" role="alert" data-form-error hidden>Fill in the highlighted boxes and send it again.</p>
+          <button class="btn btn--large" type="submit"><span>Send the request</span>{{I:arrow-right}}</button>
+          <p class="block__note">Design preview: this form doesn&rsquo;t send anything yet.</p>
+          <div class="sent" role="status" data-form-sent hidden>
+            <p class="h3">Got it.</p>
+            <p>That&rsquo;s the message you&rsquo;ll see once the form is connected. Nothing has been sent.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>

@@ -1,0 +1,2143 @@
+/* Ctrl P: shared components and the landing page */
+
+:root {
+  /* Tape cut: the pinked ends of a strip of tape. Used on the primary button. */
+  --tape-cut: polygon(3px 0%, 0 6.25%, 3px 12.5%, 0 18.75%, 3px 25%, 0 31.25%, 3px 37.5%, 0 43.75%, 3px 50%, 0 56.25%, 3px 62.5%, 0 68.75%, 3px 75%, 0 81.25%, 3px 87.5%, 0 93.75%, 3px 100%, calc(100% - 3px) 100%, 100% 93.75%, calc(100% - 3px) 87.5%, 100% 81.25%, calc(100% - 3px) 75%, 100% 68.75%, calc(100% - 3px) 62.5%, 100% 56.25%, calc(100% - 3px) 50%, 100% 43.75%, calc(100% - 3px) 37.5%, 100% 31.25%, calc(100% - 3px) 25%, 100% 18.75%, calc(100% - 3px) 12.5%, 100% 6.25%, calc(100% - 3px) 0%);
+  --grid-paper:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  --grid-white:
+    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  --dash: 1px dashed var(--ink);
+  /* The same pinked cut at two more sizes: small flags, and words taped over inside a heading */
+  --flag-cut: polygon(2px 0%, 0 12.5%, 2px 25%, 0 37.5%, 2px 50%, 0 62.5%, 2px 75%, 0 87.5%, 2px 100%, calc(100% - 2px) 100%, 100% 87.5%, calc(100% - 2px) 75%, 100% 62.5%, calc(100% - 2px) 50%, 100% 37.5%, calc(100% - 2px) 25%, 100% 12.5%, calc(100% - 2px) 0%);
+  --word-cut: polygon(0.03em 0%, 0 8.33%, 0.03em 16.67%, 0 25%, 0.03em 33.33%, 0 41.67%, 0.03em 50%, 0 58.33%, 0.03em 66.67%, 0 75%, 0.03em 83.33%, 0 91.67%, 0.03em 100%, calc(100% - 0.03em) 100%, 100% 91.67%, calc(100% - 0.03em) 83.33%, 100% 75%, calc(100% - 0.03em) 66.67%, 100% 58.33%, calc(100% - 0.03em) 50%, 100% 41.67%, calc(100% - 0.03em) 33.33%, 100% 25%, calc(100% - 0.03em) 16.67%, 100% 8.33%, calc(100% - 0.03em) 0%);
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 450;
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--sunglow);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: var(--margin);
+  top: -4rem;
+  z-index: 30;
+  padding: var(--s-3) var(--s-4);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: var(--s-3);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Grid ---------- */
+
+.wrap {
+  width: min(100% - 2 * var(--margin), var(--max));
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+.grid > * {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Type ---------- */
+
+.display,
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.display {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.04;
+}
+
+/* Card-level titles: Neue Regrade bold in sentence case. The display face stays at 28px and up. */
+.h3 {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 34em;
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: var(--lh-lead);
+  text-wrap: pretty;
+}
+
+/* Icons: one custom set, drawn on a 24px grid (assets/img/icons.svg) */
+.icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon--sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon--lg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Price: the rupee sign is drawn to sit beside Integral CF */
+.price {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.12em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.price svg {
+  width: 0.56em;
+  height: 0.78em;
+}
+
+/* Running header: every section opens like a page of the brandbook */
+.runner {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid currentColor;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.runner span:last-child {
+  opacity: 0.72;
+}
+
+/* ---------- Buttons and links ---------- */
+
+.btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  height: 3.5rem;
+  padding-inline: var(--s-5);
+  border: 0;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  clip-path: var(--tape-cut);
+}
+
+/* On hover the button is taped over: coral with the graph-paper grid */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--coral);
+  background-image: var(--grid-white);
+  background-size: 0.75rem 0.75rem;
+  transform: translateX(-101%);
+  transition: transform 0.45s var(--ease-out);
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: -6px;
+}
+
+.btn--small {
+  height: 2.75rem;
+  padding-inline: 1.125rem;
+  font-size: var(--fs-small);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--large {
+  height: 4rem;
+  padding-inline: var(--s-6);
+  font-size: 1.125rem;
+}
+
+/* On a colour section the button is white; it is still taped over in coral */
+.btn--light {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+  clip-path: none;
+  transition: color 0.3s var(--ease-out);
+}
+
+.btn--outline::before {
+  background: var(--ink);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  color: var(--paper);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+  transition: text-decoration-color 0.25s;
+}
+
+.link:hover {
+  text-decoration-color: var(--coral);
+}
+
+/* ---------- Category chip: a die-cut sticker tag ---------- */
+
+/* After the concept board: an icon tile and a label on one white die-cut backing, round at the left,
+   with one stepped corner cut at the right. Every chip uses the same cut. */
+.chip {
+  --on: var(--ink);
+  --b: 0.3125rem;
+  --back: var(--paper);
+  --cut-back: polygon(0 0, calc(100% - 1.55rem) 0, calc(100% - 1.3rem) 0.28rem, calc(100% - 0.95rem) 0.28rem, 100% 1.15rem, 100% 100%, 0 100%);
+  --cut-label: polygon(0 0, calc(100% - 1.3rem) 0, calc(100% - 1.05rem) 0.25rem, calc(100% - 0.8rem) 0.25rem, 100% 0.95rem, 100% 100%, 0 100%);
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: stretch;
+  gap: var(--b);
+  height: 3rem;
+  padding: var(--b);
+  border: 0;
+  background: none;
+  color: var(--on);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.chip::before,
+.chip::after {
+  content: "";
+  position: absolute;
+  border-radius: 0.75rem 0 0 0.75rem;
+  clip-path: var(--cut-back);
+}
+
+.chip::before {
+  inset: 0;
+  z-index: -1;
+  background: var(--back);
+}
+
+/* A hairline round the die-cut edge, in place of a shadow */
+.chip::after {
+  inset: -1px;
+  z-index: -2;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.chip__icon,
+.chip__label {
+  display: flex;
+  align-items: center;
+  background: var(--c, var(--tint-2));
+}
+
+.chip__icon {
+  justify-content: center;
+  width: 2.375rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.chip__icon .icon {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.chip__label {
+  padding: 0 1.4rem 0 0.875rem;
+  clip-path: var(--cut-label);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 0.625rem;
+}
+
+/* ---------- Tape pieces ---------- */
+
+/* A word taped over inside a heading. The tape wipes in, the way it does on the button. */
+.taped {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  margin-top: 0.1em;
+  padding-inline: 0.14em;
+  color: var(--on, var(--paper));
+}
+
+.taped::before {
+  content: "";
+  position: absolute;
+  inset: 0.05em 0 -0.13em;
+  z-index: -1;
+  background-color: var(--c, var(--coral));
+  background-image: var(--grid-white);
+  background-size: 0.2em 0.2em;
+  clip-path: var(--word-cut);
+  rotate: -0.7deg;
+  transform-origin: 0 50%;
+}
+
+/* Flag: a short piece of coloured tape that says one thing (New, 15% off, an occasion) */
+.flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 1.75rem;
+  padding-inline: 0.75rem;
+  background-color: var(--c, var(--sunglow));
+  background-image: var(--grid-white);
+  background-size: 0.625rem 0.625rem;
+  color: var(--on, var(--ink));
+  font-size: var(--fs-meta);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  clip-path: var(--flag-cut);
+}
+
+/* Category pill: the compact cousin of the chip, for inside a card */
+.cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 1.75rem;
+  padding: 0 0.625rem 0 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--c);
+  color: var(--on, var(--ink));
+  font-size: var(--fs-meta);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cat .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* Print: a photo with a white border, held up by a piece of tape */
+.print {
+  position: relative;
+  display: block;
+  padding: 0.5rem;
+  background: var(--paper);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.07),
+    0 0.75rem 1.5rem -1rem rgba(0, 0, 0, 0.14);
+}
+
+.print img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.print__tape {
+  position: absolute;
+  left: 50%;
+  top: -0.8rem;
+  z-index: 1;
+  width: 5.5rem;
+  height: 1.6rem;
+  translate: -50% 0;
+  rotate: var(--tr, -3deg);
+  background-color: var(--c);
+  background-image: var(--grid-white);
+  background-size: 0.625rem 0.625rem;
+  clip-path: var(--flag-cut);
+}
+
+/* The label on a print is taped over in its colour on hover, like the button */
+.print__label {
+  position: absolute;
+  left: -0.5rem;
+  bottom: 1.125rem;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 2rem;
+  padding-inline: 0.75rem;
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: var(--ink);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  line-height: 1;
+  transition: color 0.3s var(--ease-out);
+}
+
+.print__label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--c);
+  background-image: var(--grid-white);
+  background-size: 0.625rem 0.625rem;
+  transform: translateX(-101%);
+  transition: transform 0.45s var(--ease-out);
+}
+
+.print:hover .print__label,
+.print:focus-visible .print__label {
+  color: var(--on, var(--ink));
+}
+
+.print:hover .print__label::before,
+.print:focus-visible .print__label::before {
+  transform: none;
+}
+
+/* ---------- Promises: three postage stamps ---------- */
+
+.promises {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.promise {
+  --r: 0.3125rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s-3);
+  width: 8.5rem;
+  min-height: 5.75rem;
+  padding: 0.9375rem 0.9375rem 0.875rem;
+  background: var(--c);
+  color: var(--on, var(--ink));
+  font-size: var(--fs-small);
+  font-weight: 700;
+  line-height: 1.2;
+  /* Perforated edge: a solid middle, plus a ring of punched holes along every side */
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat,
+    radial-gradient(circle at center, #0000 calc(var(--r) * 0.58), #000 calc(var(--r) * 0.58 + 0.5px)) calc(-1 * var(--r)) calc(-1 * var(--r)) / calc(2 * var(--r)) calc(2 * var(--r)) round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat,
+    radial-gradient(circle at center, #0000 calc(var(--r) * 0.58), #000 calc(var(--r) * 0.58 + 0.5px)) calc(-1 * var(--r)) calc(-1 * var(--r)) / calc(2 * var(--r)) calc(2 * var(--r)) round;
+}
+
+.promise::after {
+  content: "";
+  position: absolute;
+  inset: 0.5rem;
+  border: 1px solid currentColor;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.promise:nth-child(1) {
+  rotate: -3deg;
+}
+
+.promise:nth-child(2) {
+  rotate: 2deg;
+}
+
+.promise:nth-child(3) {
+  rotate: -1.5deg;
+}
+
+.promise .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.promises--lg {
+  gap: var(--gutter);
+}
+
+.promises--lg .promise {
+  --r: 0.4375rem;
+  flex: 1 1 15rem;
+  width: auto;
+  min-height: 12rem;
+  padding: var(--s-6) var(--s-6) var(--s-5);
+  font-size: var(--fs-h3);
+  letter-spacing: -0.015em;
+}
+
+.promises--lg .promise::after {
+  inset: 0.75rem;
+}
+
+.promises--lg .promise .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.promises--lg .promise small {
+  display: block;
+  margin-top: var(--s-2);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav.is-stuck {
+  border-color: var(--rule);
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  height: 4.5rem;
+}
+
+.nav__logo {
+  margin-right: auto;
+}
+
+.nav__logo img {
+  width: auto;
+  height: 2.25rem;
+}
+
+.nav__links {
+  position: absolute;
+  inset: 100% 0 auto;
+  display: none;
+  flex-direction: column;
+  max-height: calc(100vh - 4.5rem);
+  padding: var(--s-4) var(--margin) var(--s-6);
+  overflow-y: auto;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+}
+
+.nav__links.is-open {
+  display: flex;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding-block: var(--s-3);
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-lead);
+  font-weight: 500;
+}
+
+.nav__link .icon {
+  display: none;
+}
+
+.nav__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.nav__tool {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.nav__tool .icon {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.nav__tool--wide {
+  display: none;
+}
+
+.nav__count {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.125rem;
+  display: grid;
+  place-items: center;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  padding-inline: 0.25rem;
+  border-radius: 1rem;
+  background: var(--coral);
+  color: var(--ink);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.nav__count[hidden] {
+  display: none;
+}
+
+.nav__cta {
+  display: none;
+}
+
+.nav__toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+.nav__toggle .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.nav__toggle .icon:last-child,
+.nav__toggle[aria-expanded="true"] .icon:first-child {
+  display: none;
+}
+
+.nav__toggle[aria-expanded="true"] .icon:last-child {
+  display: block;
+}
+
+/* Mega menu. On phones it is a plain list of categories inside the menu. */
+.mega .wrap {
+  width: 100%;
+}
+
+.mega__preview,
+.mega__foot {
+  display: none;
+}
+
+.mega__cat {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding-block: 0.375rem;
+  padding-left: var(--s-2);
+  border-bottom: 1px solid var(--rule);
+  font-weight: 500;
+}
+
+.mega__cat > .icon {
+  display: none;
+}
+
+.mega__icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.25rem;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.mega__icon .icon {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+@media (min-width: 30rem) {
+  .nav__cta {
+    display: inline-flex;
+  }
+
+  .nav__tool--wide {
+    display: grid;
+  }
+}
+
+@media (min-width: 64rem) {
+  .nav__bar {
+    gap: var(--s-6);
+  }
+
+  .nav__logo {
+    margin-right: 0;
+  }
+
+  .nav__links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-self: stretch;
+    align-items: stretch;
+    gap: var(--s-6);
+    margin-right: auto;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+  }
+
+  .nav__item {
+    display: flex;
+  }
+
+  .nav__link {
+    padding: 0;
+    border: 0;
+    font-size: var(--fs-small);
+  }
+
+  .nav__link .icon {
+    display: block;
+  }
+
+  /* One quiet hover for nav links: an underline that draws in */
+  .nav__link span {
+    padding-block: 0.375rem;
+    background: linear-gradient(var(--ink), var(--ink)) no-repeat 0 100% / 0 2px;
+    transition: background-size 0.3s var(--ease-out);
+  }
+
+  .nav__link:hover span,
+  .nav__item.is-open > .nav__link span {
+    background-size: 100% 2px;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .mega {
+    position: absolute;
+    pointer-events: none;
+    inset: 100% 0 auto;
+    visibility: hidden;
+    opacity: 0;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--ink);
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
+  }
+
+  /* Opened by script (js/main.js), so it needs a deliberate pointer move or keyboard focus */
+  .nav__item.is-open .mega {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mega .wrap {
+    width: min(100% - 2 * var(--margin), var(--max));
+  }
+
+  .mega__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gutter);
+    padding-block: var(--s-6);
+  }
+
+  .mega__cats {
+    grid-column: 1 / span 3;
+    align-self: start;
+  }
+
+  .mega__cat {
+    padding: 0.375rem var(--s-3) 0.375rem 0;
+  }
+
+  .mega__cat > .icon {
+    display: block;
+    margin-left: auto;
+    opacity: 0;
+  }
+
+  .mega__cat.is-active {
+    font-weight: 600;
+  }
+
+  .mega__cat.is-active .mega__icon {
+    background: var(--c);
+    color: var(--on, var(--ink));
+  }
+
+  .mega__cat.is-active > .icon {
+    opacity: 1;
+  }
+
+  .mega__cat--all {
+    margin-top: var(--s-4);
+    border-bottom: 0;
+  }
+
+  .mega__preview {
+    position: relative;
+    display: grid;
+    grid-column: 5 / span 8;
+  }
+
+  /* Panels are stacked in one cell and cross-fade, so nothing shifts */
+  .mega__panel {
+    grid-area: 1 / 1;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: var(--gutter);
+    align-items: start;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 0.25s,
+      visibility 0.25s;
+  }
+
+  .mega__panel.is-active {
+    visibility: inherit;
+    opacity: 1;
+  }
+
+  .mega__products {
+    grid-column: span 2;
+    display: grid;
+    gap: var(--s-3);
+    font-size: var(--fs-small);
+  }
+
+  .mega__products a {
+    color: var(--ink-soft);
+  }
+
+  .mega__products a:hover {
+    color: var(--ink);
+  }
+
+  .mega__products p {
+    font-weight: 600;
+  }
+
+  .mega__media {
+    grid-column: span 3;
+    aspect-ratio: 4 / 3;
+    border-top: 4px solid var(--c);
+    background: var(--tint-1);
+  }
+
+  .mega__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mega__caption {
+    grid-column: span 3;
+    display: grid;
+    justify-items: start;
+    gap: var(--s-3);
+  }
+
+  .mega__caption .h3 {
+    font-size: 1.625rem;
+  }
+
+  .mega__caption p:not(.h3) {
+    font-size: var(--fs-small);
+    color: var(--ink-soft);
+  }
+
+  .mega__foot {
+    display: flex;
+    gap: var(--s-7);
+    padding-block: var(--s-4);
+    border-top: 1px solid var(--rule);
+    font-size: var(--fs-small);
+  }
+
+  .mega__foot li {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+  }
+}
+
+/* ---------- Hero ---------- */
+
+/* On a desktop the hero is exactly one screen: navbar on top, the tape on the bottom edge.
+   Three bands: the headline, then copy beside the products, then a clear lane for Postman P above the tape. */
+.hero {
+  --lane: 8rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+  background-image: var(--grid-paper);
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+
+.hero .wrap {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-top: var(--s-7);
+}
+
+/* Each line rises from behind a mask. The padding gives the heavy caps room so nothing is shaved off. */
+.hero__title .line {
+  display: block;
+  overflow: hidden;
+  padding-block: 0.08em 0.14em;
+  margin-block: -0.08em -0.14em;
+}
+
+.hero__title .line > span {
+  display: block;
+}
+
+.hero__row {
+  display: grid;
+  flex: 1;
+  align-content: start;
+  gap: var(--s-6);
+  margin-top: var(--s-4);
+  padding-bottom: var(--lane);
+}
+
+.hero__copy {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-6);
+}
+
+.hero__lead {
+  max-width: 28em;
+}
+
+.hero__cta {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+}
+
+.hero__note {
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+/* Three products, held up clear of the lane so Postman P never rides into them */
+.lineup {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.1 / 1;
+}
+
+.lineup img {
+  position: absolute;
+  bottom: 0;
+  max-width: none;
+  height: auto;
+  transform-origin: 50% 100%;
+}
+
+.lineup__boxes {
+  left: 3%;
+  width: 45%;
+  rotate: -2deg;
+}
+
+.lineup__mailer {
+  left: 43%;
+  z-index: 1;
+  width: 29%;
+  rotate: 5deg;
+}
+
+.lineup__stickers {
+  left: 66%;
+  z-index: 2;
+  width: 33%;
+  rotate: -5deg;
+}
+
+/* The road: the tape's lettering slides one way as the page scrolls and Postman P rides the other */
+.road {
+  position: relative;
+  z-index: 3;
+}
+
+.road__tape {
+  height: 3.75rem;
+  overflow: hidden;
+  background-color: var(--coral);
+  background-image: var(--grid-white);
+  background-size: 0.875rem 0.875rem;
+}
+
+.road__run {
+  display: flex;
+  align-items: center;
+  gap: var(--s-7);
+  width: max-content;
+  height: 100%;
+  padding-left: var(--margin);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  translate: var(--pull, 0) 0;
+  will-change: translate;
+}
+
+.road__run span:nth-child(even) {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.road__rider {
+  position: absolute;
+  left: var(--margin);
+  bottom: 3.5rem;
+  width: 6.5rem;
+  translate: calc(var(--ride, 0) * 1vw) 0;
+}
+
+@media (min-width: 67.5rem) {
+  .hero {
+    --lane: 9.5rem;
+    min-height: calc(100svh - 4.5rem);
+  }
+
+  .hero .wrap {
+    padding-top: clamp(2.5rem, 6.5vh, 4.5rem);
+  }
+
+  /* The headline runs the full width on two lines */
+  .hero__title {
+    font-size: clamp(4.5rem, 7.5vw, 7.25rem);
+  }
+
+  .hero__row {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-content: stretch;
+    column-gap: var(--gutter);
+  }
+
+  .hero__copy {
+    grid-column: 1 / span 6;
+    align-self: start;
+  }
+
+  /* As tall as the screen allows once the navbar, headline, lane and tape are accounted for */
+  .lineup {
+    --h: clamp(13rem, 100svh - 37.5rem, 22rem);
+    grid-column: 7 / span 6;
+    align-self: end;
+    justify-self: end;
+    width: min(100%, var(--h) * 2.1);
+  }
+
+  .road__run {
+    padding-left: max(var(--margin), (100vw - var(--max)) / 2);
+  }
+
+  .road__rider {
+    left: max(var(--margin), (100vw - var(--max)) / 2);
+    width: 8.5rem;
+  }
+}
+
+/* ---------- Stickers ---------- */
+
+/* Stickers only ever sit on something physical: the tape, a parcel, a product photo. */
+.sticker {
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.1));
+}
+
+/* ---------- Promises: three postage stamps, each with one of the crew ---------- */
+
+.story {
+  padding-block: var(--section);
+  background: var(--tint-1);
+  overflow: clip;
+}
+
+.story .grid {
+  align-items: start;
+  row-gap: var(--s-8);
+}
+
+.story__head {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.story__cards {
+  display: grid;
+  gap: var(--s-8);
+}
+
+/* A stamp: label and value along the top, the promise bottom left, the picture in its own window on the right.
+   The perforated paper is a layer of its own, so the tape and the postmark can hang over the edge. */
+/* Each stamp sticks a little lower than the one before, so the label and number of every earlier stamp stay readable */
+.vow {
+  --r: 0.4375rem;
+  position: sticky;
+  top: calc(5.5rem + var(--i) * 4rem);
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--s-4) var(--s-4);
+  padding: var(--s-5);
+  color: var(--on, var(--ink));
+}
+
+.vow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--c);
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat,
+    radial-gradient(circle at center, #0000 calc(var(--r) * 0.58), #000 calc(var(--r) * 0.58 + 0.5px)) calc(-1 * var(--r)) calc(-1 * var(--r)) / calc(2 * var(--r)) calc(2 * var(--r)) round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat,
+    radial-gradient(circle at center, #0000 calc(var(--r) * 0.58), #000 calc(var(--r) * 0.58 + 0.5px)) calc(-1 * var(--r)) calc(-1 * var(--r)) / calc(2 * var(--r)) calc(2 * var(--r)) round;
+}
+
+.vow:nth-child(1) {
+  rotate: 1deg;
+}
+
+.vow:nth-child(2) {
+  rotate: -2.5deg;
+}
+
+.vow:nth-child(3) {
+  rotate: 1deg;
+}
+
+.vow__label {
+  align-self: center;
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+/* The step number is the stamp's value */
+.vow__no {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.vow__copy {
+  grid-column: 1 / -1;
+  align-self: end;
+}
+
+.vow__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.vow__text {
+  max-width: 24em;
+  margin-top: var(--s-3);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* The picture window: a lighter panel of the stamp's own colour, set at a slight angle */
+.vow__window {
+  position: relative;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  height: 16rem;
+  padding: var(--s-3);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.26);
+  rotate: 1.5deg;
+}
+
+.vow__window img {
+  position: absolute;
+  inset: var(--s-3);
+  width: calc(100% - 2 * var(--s-3));
+  height: calc(100% - 2 * var(--s-3));
+  object-fit: contain;
+  object-position: 50% 100%;
+}
+
+.vow__trail {
+  position: absolute;
+  left: -22%;
+  top: 44%;
+  width: 62%;
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  stroke-linecap: round;
+}
+
+.vow__tape {
+  position: absolute;
+  left: 0.5rem;
+  top: -1.1rem;
+  width: 7.5rem;
+  height: 2rem;
+  rotate: -16deg;
+  background-color: var(--coral);
+  background-image: var(--grid-white);
+  background-size: 0.625rem 0.625rem;
+  clip-path: var(--flag-cut);
+}
+
+.vow__postmark {
+  display: none;
+  position: absolute;
+  right: -1.75rem;
+  top: -1.5rem;
+  width: 8.5rem;
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+}
+
+@media (min-width: 45rem) {
+  .vow {
+    grid-template-columns: minmax(0, 1fr) auto 41%;
+    grid-template-rows: auto 1fr;
+    gap: var(--s-5);
+    min-height: 22rem;
+    padding: var(--s-6) var(--s-5) var(--s-6) var(--s-6);
+  }
+
+  .vow__no {
+    font-size: 3rem;
+  }
+
+  .vow__postmark {
+    display: block;
+  }
+
+  .vow__copy {
+    grid-column: 1 / span 2;
+  }
+
+  .vow__window {
+    grid-column: 3;
+    grid-row: 1 / -1;
+    height: auto;
+  }
+}
+
+@media (min-width: 67.5rem) {
+  .story__head {
+    position: sticky;
+    top: 7rem;
+    grid-column: 1 / span 5;
+    padding-top: var(--s-6);
+  }
+
+  .vow {
+    top: calc(7.5rem + var(--i) * 4.75rem);
+  }
+
+  .story__cards {
+    grid-column: 7 / span 6;
+  }
+
+  /* The middle stamp sits further left, so the column is not a rigid stack */
+  .vow:nth-child(2) {
+    translate: -7% 0;
+  }
+}
+
+/* ---------- Promises band ---------- */
+
+.facts {
+  padding-block: var(--s-8);
+  background: var(--tint-1);
+}
+
+/* ---------- Categories ---------- */
+
+.cats {
+  padding-block: var(--section);
+}
+
+.cats__intro {
+  row-gap: var(--s-5);
+  margin-top: var(--s-7);
+}
+
+.cats__body {
+  row-gap: var(--s-6);
+  margin-top: var(--s-7);
+}
+
+/* The index: big names in a list. Point at one and a strip of its tape runs across the row. */
+.index {
+  border-top: 1px solid var(--ink);
+}
+
+.index__row {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-1) var(--s-4);
+  padding: var(--s-4) 0 var(--s-4) var(--s-4);
+  border-bottom: 1px solid var(--ink);
+  border-left: 0.5rem solid var(--c);
+  overflow: hidden;
+  transition: color 0.3s var(--ease-out);
+}
+
+.index__row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--c);
+  background-image: var(--grid-white);
+  background-size: 0.875rem 0.875rem;
+  transform: translateX(-101%);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.index__no {
+  grid-column: 1;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.index__name {
+  grid-column: 1;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.1rem + 3.4vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.index__thumb {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: cover;
+}
+
+.index__from {
+  grid-column: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.index__from .price {
+  font-size: 1.75rem;
+}
+
+.index__row > .icon,
+.index__preview {
+  display: none;
+}
+
+.more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5) var(--s-6);
+  margin-top: var(--s-7);
+}
+
+.more__title {
+  font-size: var(--fs-lead);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@media (min-width: 67.5rem) {
+  .cats__intro {
+    align-items: end;
+    margin-top: var(--s-8);
+  }
+
+  .cats__intro .h2 {
+    grid-column: 1 / span 7;
+  }
+
+  .cats__intro .lead {
+    grid-column: 9 / span 4;
+  }
+
+  .cats__body {
+    align-items: start;
+    margin-top: var(--s-8);
+  }
+
+  .index {
+    grid-column: 1 / span 7;
+  }
+
+  .index__row {
+    grid-template-columns: 2.75rem minmax(0, 1fr) auto 1.5rem;
+    gap: var(--s-4);
+    padding: 1.375rem var(--s-4) 1.375rem var(--s-4);
+    border-left: 0;
+  }
+
+  .index__no,
+  .index__name,
+  .index__from {
+    grid-column: auto;
+  }
+
+  .index__thumb {
+    display: none;
+  }
+
+  .index__row > .icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .index__row.is-active {
+    color: var(--on, var(--ink));
+  }
+
+  .index__row.is-active::before {
+    transform: none;
+  }
+
+  /* The product beside the list changes with the row. Stacked in one cell, so nothing shifts. */
+  .index__preview {
+    position: sticky;
+    top: 6.5rem;
+    display: grid;
+    grid-column: 9 / span 4;
+  }
+
+  .index__shot {
+    grid-area: 1 / 1;
+    display: grid;
+    gap: var(--s-4);
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+  }
+
+  .index__shot.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .index__shot img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  .index__shot figcaption {
+    max-width: 22em;
+    font-weight: 500;
+    line-height: 1.4;
+    text-wrap: pretty;
+  }
+
+  .more {
+    margin-top: var(--s-8);
+  }
+
+  .more .link {
+    margin-left: auto;
+  }
+}
+
+/* ---------- How it works (sunglow) ---------- */
+
+.how {
+  position: relative;
+  padding-block: var(--section);
+  background: var(--sunglow);
+}
+
+.how__head {
+  row-gap: var(--s-5);
+  margin-top: var(--s-7);
+}
+
+.how__parcel {
+  justify-self: center;
+  width: min(60%, 15rem);
+  rotate: 5deg;
+  filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.08));
+}
+
+/* Ticket strip: four stubs on one strip of paper, perforated between */
+.stubs {
+  display: grid;
+  margin-top: var(--s-7);
+  background: var(--paper);
+}
+
+.stub {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s-2) var(--s-5);
+  padding: var(--s-5);
+}
+
+.stub + .stub {
+  border-top: var(--dash);
+}
+
+/* Notches punched out at each perforation */
+.stub + .stub::before,
+.stub + .stub::after {
+  content: "";
+  position: absolute;
+  top: -0.6875rem;
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  background: var(--sunglow);
+}
+
+.stub + .stub::before {
+  left: -0.6875rem;
+}
+
+.stub + .stub::after {
+  right: -0.6875rem;
+}
+
+.stub__icon {
+  grid-row: span 3;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: var(--dash);
+}
+
+.stub__no {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.stub__title {
+  font-size: 1.5rem;
+}
+
+.stub p {
+  color: var(--ink-soft);
+}
+
+@media (min-width: 67.5rem) {
+  .how__head {
+    align-items: end;
+    margin-top: var(--s-8);
+  }
+
+  .how__head .h2 {
+    grid-column: 1 / span 7;
+  }
+
+  .how__head {
+    position: relative;
+  }
+
+  /* The packed parcel rests on the corner of the ticket strip: what step four hands you */
+  .how__parcel {
+    position: absolute;
+    right: var(--s-6);
+    bottom: -6.5rem;
+    z-index: 1;
+    width: 12rem;
+  }
+
+  .stubs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: var(--s-8);
+  }
+
+  .stub {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-2);
+    padding: var(--s-6) var(--s-5) var(--s-7);
+  }
+
+  .stub + .stub {
+    border-top: 0;
+    border-left: var(--dash);
+  }
+
+  .stub + .stub::before,
+  .stub + .stub::after {
+    left: -0.6875rem;
+    right: auto;
+  }
+
+  .stub + .stub::after {
+    top: auto;
+    bottom: -0.6875rem;
+  }
+
+  .stub__icon {
+    grid-row: auto;
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-bottom: var(--s-5);
+  }
+
+  .stub__icon .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Shop by occasion and For brands now live in flow.css, with the pages they lead to. */
+
+/* ---------- Promotion: one loud section ---------- */
+
+.promo {
+  padding-block: var(--section);
+  background: var(--fuchsia);
+  color: var(--paper);
+  overflow: clip;
+}
+
+.promo :focus-visible {
+  outline-color: var(--paper);
+}
+
+.promo .grid {
+  align-items: center;
+  row-gap: var(--s-7);
+}
+
+.promo__copy {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-5);
+}
+
+.promo .lead {
+  font-weight: 500;
+}
+
+.promo__art {
+  justify-self: center;
+  width: min(100%, 24rem);
+  rotate: 4deg;
+}
+
+@media (min-width: 67.5rem) {
+  .promo__copy {
+    grid-column: 1 / span 7;
+  }
+
+  .promo__art {
+    grid-column: 8 / span 5;
+    width: 112%;
+    max-width: none;
+  }
+}
+
+/* ---------- Questions ---------- */
+
+.faq {
+  padding-block: var(--section);
+}
+
+.faq .grid {
+  align-items: start;
+  row-gap: var(--s-6);
+}
+
+.faq__list {
+  border-top: 1px solid var(--ink);
+}
+
+.qa {
+  border-bottom: 1px solid var(--ink);
+}
+
+.qa summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-5);
+  padding-block: var(--s-5);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  list-style: none;
+  cursor: pointer;
+}
+
+.qa summary::-webkit-details-marker {
+  display: none;
+}
+
+.qa summary .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: rotate 0.3s var(--ease-out);
+}
+
+.qa[open] summary .icon {
+  rotate: 45deg;
+}
+
+.qa p {
+  max-width: 32em;
+  padding-bottom: var(--s-5);
+  font-size: var(--fs-lead);
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 67.5rem) {
+  .faq .h2 {
+    grid-column: 1 / span 5;
+  }
+
+  .faq__list {
+    grid-column: 7 / span 6;
+  }
+}
+
+/* ---------- Closing call to action ---------- */
+
+.closer {
+  padding-top: var(--section);
+  background-image: var(--grid-paper);
+  background-size: var(--grid-cell) var(--grid-cell);
+  overflow: clip;
+}
+
+.closer__copy {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-5);
+  padding-bottom: var(--s-7);
+}
+
+.closer__copy .btn {
+  margin-top: var(--s-3);
+}
+
+.closer__postman {
+  justify-self: center;
+  width: min(70%, 20rem);
+  margin-bottom: -0.25rem;
+}
+
+@media (min-width: 67.5rem) {
+  .closer .grid {
+    align-items: end;
+  }
+
+  .closer__copy {
+    grid-column: 1 / span 8;
+    padding-bottom: var(--section);
+  }
+
+  .closer__postman {
+    grid-column: 9 / span 4;
+    width: 100%;
+    max-width: 23rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  background: var(--paper);
+  font-size: var(--fs-small);
+}
+
+.footer__top {
+  row-gap: var(--s-6);
+  padding-block: var(--s-8) var(--s-7);
+}
+
+.footer__brand {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-4);
+}
+
+.footer__brand img {
+  width: auto;
+  height: 2.75rem;
+}
+
+.footer__brand p {
+  max-width: 18em;
+  font-size: var(--fs-body);
+  color: var(--ink-soft);
+}
+
+.footer__col {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: var(--s-2);
+  grid-column: span 2;
+}
+
+.footer__col h2 {
+  margin-bottom: var(--s-2);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+.footer__col a {
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.footer__col a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.footer__base {
+  padding-block: var(--s-5);
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+}
+
+/* Printer's colour bar: the whole palette, edge to edge, to finish the page */
+.colourbar {
+  display: flex;
+  height: 0.875rem;
+}
+
+.colourbar span {
+  flex: 1;
+}
+
+@media (min-width: 67.5rem) {
+  .footer__brand {
+    grid-column: 1 / span 5;
+  }
+
+  .footer__col:nth-of-type(1) {
+    grid-column: 7 / span 2;
+  }
+}
+
+/* Sections no longer open with a running header, so their first row sits at the top of the section */
+.cats .cats__intro,
+.how .how__head {
+  margin-top: 0;
+}
+
+/* ---------- Grid overlay (press G) ---------- */
+
+.gridlines {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.gridlines .grid {
+  height: 100%;
+}
+
+.gridlines span {
+  grid-column: auto;
+  background: rgba(249, 66, 58, 0.1);
+  box-shadow:
+    inset 1px 0 rgba(249, 66, 58, 0.5),
+    inset -1px 0 rgba(249, 66, 58, 0.5);
+}
+
+.gridlines span:nth-child(n + 5) {
+  display: none;
+}
+
+@media (min-width: 45rem) {
+  .gridlines span:nth-child(-n + 8) {
+    display: block;
+  }
+}
+
+@media (min-width: 67.5rem) {
+  .gridlines span:nth-child(n) {
+    display: block;
+  }
+}
+
+/* ---------- Motion ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    translate: 0 1rem;
+    transition:
+      opacity 0.6s var(--ease-out),
+      translate 0.6s var(--ease-out);
+    transition-delay: calc(var(--d, 0) * 80ms);
+  }
+
+  .js [data-reveal].is-in {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  /* A taped word is taped over as its heading arrives */
+  .js [data-reveal] .taped::before {
+    transform: scaleX(0);
+    transition: transform 0.6s var(--ease-out) 0.3s;
+  }
+
+  .js [data-reveal].is-in .taped::before {
+    transform: none;
+  }
+
+  .js .hero__title .line > span {
+    translate: 0 112%;
+    animation: rise 0.9s var(--ease-out) forwards;
+    animation-delay: calc(100ms + var(--i) * 90ms);
+  }
+
+  .js .hero__title .taped::before {
+    animation: tape-in 0.6s var(--ease-out) 0.95s backwards;
+  }
+
+  .js .hero__lead,
+  .js .hero__cta {
+    animation: fade 0.8s var(--ease-out) 0.5s backwards;
+  }
+
+  /* The products step onto the tape one after another */
+  .js .lineup img {
+    animation: stand 0.7s var(--ease-out) backwards;
+  }
+
+  .js .lineup img:nth-child(1) { animation-delay: 0.45s; }
+  .js .lineup img:nth-child(2) { animation-delay: 0.55s; }
+  .js .lineup img:nth-child(3) { animation-delay: 0.65s; }
+
+  @keyframes rise {
+    to {
+      translate: 0 0;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes tape-in {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes stand {
+    from {
+      opacity: 0;
+      translate: 0 1.25rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

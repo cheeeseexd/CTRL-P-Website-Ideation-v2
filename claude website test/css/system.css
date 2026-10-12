@@ -1,0 +1,245 @@
+/* Design system page only. Everything shown here is built from tokens.css and styles.css. */
+
+.sys-hero {
+  padding-block: var(--s-8) var(--section);
+}
+
+.sys-hero .lead {
+  margin-top: var(--s-5);
+}
+
+.sys {
+  padding-bottom: var(--section);
+}
+
+.sys__body {
+  row-gap: var(--s-7);
+  margin-top: var(--s-7);
+}
+
+.sys__note {
+  max-width: 32em;
+  color: var(--ink-soft);
+}
+
+.sys__note + .sys__note {
+  margin-top: var(--s-3);
+}
+
+@media (min-width: 67.5rem) {
+  .sys__intro {
+    grid-column: 1 / span 4;
+    position: sticky;
+    top: 6.5rem;
+    align-self: start;
+  }
+
+  .sys__demo {
+    grid-column: 6 / span 7;
+  }
+}
+
+/* Colour */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+
+.swatch__chip {
+  aspect-ratio: 3 / 2;
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+.swatch__name {
+  margin-top: var(--s-3);
+  font-weight: 600;
+}
+
+.swatch__meta {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.swatches + .swatches {
+  margin-top: var(--s-7);
+}
+
+@media (min-width: 45rem) {
+  .swatches {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .swatches--accent {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .swatches--accent .swatch__chip {
+    aspect-ratio: 1;
+  }
+}
+
+/* Type */
+.specimen {
+  display: grid;
+  gap: var(--s-3);
+  padding-block: var(--s-5);
+  border-top: 1px solid var(--rule);
+}
+
+.specimen:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.specimen__meta {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+.specimen__meta strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.specimen .display {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+@media (min-width: 45rem) {
+  .specimen {
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--gutter);
+    align-items: baseline;
+  }
+}
+
+/* Grid */
+.gridtable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+  font-variant-numeric: tabular-nums;
+}
+
+.gridtable th,
+.gridtable td {
+  padding: var(--s-3) var(--s-4) var(--s-3) 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  font-weight: 450;
+}
+
+.gridtable thead th {
+  border-bottom: 2px solid var(--ink);
+  font-weight: 600;
+}
+
+.gridtable tbody th {
+  font-weight: 600;
+}
+
+.griddemo {
+  margin-top: var(--s-6);
+}
+
+.griddemo span {
+  grid-column: auto;
+  height: 4rem;
+  background: var(--tint-1);
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+/* Components */
+.sys-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+}
+
+.sys-stack {
+  display: grid;
+  gap: var(--s-8);
+}
+
+.sys-label {
+  margin-bottom: var(--s-4);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+/* A tinted surface, so white paper components show their edges */
+.sys-surface {
+  padding: var(--s-6);
+  background: var(--tint-1);
+}
+
+.sys-stubs {
+  margin-top: 0;
+  border: var(--s-5) solid var(--sunglow);
+}
+
+@media (min-width: 67.5rem) {
+  .sys-stubs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 0;
+  }
+}
+
+.iconset {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+  gap: var(--s-6) var(--s-4);
+  font-size: var(--fs-meta);
+  color: var(--ink-soft);
+}
+
+.iconset li {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+}
+
+.iconset .icon {
+  color: var(--ink);
+}
+
+.iconset .iconset__rupee {
+  width: 1.75rem;
+}
+
+.rules li {
+  padding-block: var(--s-3);
+  border-top: 1px solid var(--rule);
+}
+
+.rules li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.rules strong {
+  font-weight: 600;
+}
+
+.voice {
+  display: grid;
+  gap: var(--gutter);
+}
+
+.voice div {
+  padding-top: var(--s-4);
+  border-top: 2px solid var(--ink);
+}
+
+.voice p + p {
+  margin-top: var(--s-3);
+  color: var(--ink-soft);
+}
+
+@media (min-width: 45rem) {
+  .voice {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

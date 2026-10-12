@@ -1,0 +1,72 @@
+  <main id="main">
+
+    <section class="cart checkout">
+      <div class="wrap">
+        <ol class="trail" aria-label="Checkout steps">
+          <li class="is-done"><a href="cart.html"><i>1</i>Cart</a></li>
+          <li class="is-active" aria-current="step"><i>2</i>Details</li>
+          <li><i>3</i>Placed</li>
+        </ol>
+        <h1 class="display">Where is it <span class="taped">going?</span></h1>
+
+        <div class="grid cart__grid" data-checkout hidden>
+          <form class="checkout__form" data-checkout-form novalidate>
+
+            <fieldset class="block">
+              <legend class="block__title"><i>1</i>Who it&rsquo;s for</legend>
+              <div class="block__fields">
+                <label class="input input--wide"><span>Full name</span><input type="text" name="name" autocomplete="name" required></label>
+                <label class="input"><span>Phone</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" required></label>
+                <label class="input"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="block">
+              <legend class="block__title"><i>2</i>Where it&rsquo;s going</legend>
+              <div class="block__fields">
+                <label class="input input--wide"><span>Address</span><input type="text" name="address" autocomplete="street-address" required></label>
+                <label class="input"><span>City</span><input type="text" name="city" autocomplete="address-level2" required></label>
+                <label class="input"><span>State</span><input type="text" name="state" autocomplete="address-level1" required></label>
+                <label class="input"><span>Pin code</span><input type="text" name="pin" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></label>
+                <label class="check input--wide"><input type="checkbox" name="gift"><span>It&rsquo;s a gift. Leave the prices out of the parcel.</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="block">
+              <legend class="block__title"><i>3</i>How you&rsquo;ll pay</legend>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="pay" value="UPI" checked><span>UPI</span></label>
+                <label class="opt"><input type="radio" name="pay" value="Card"><span>Card</span></label>
+                <label class="opt"><input type="radio" name="pay" value="Net banking"><span>Net banking</span></label>
+              </div>
+              <p class="block__note">You pay on the next screen. This is a design preview, so no payment is taken and nothing is sent anywhere.</p>
+            </fieldset>
+
+            <p class="checkout__error" role="alert" data-checkout-error hidden>Fill in the highlighted boxes and we&rsquo;re good to go.</p>
+            <button class="btn btn--large checkout__submit" type="submit"><span>Place the order</span>{{I:arrow-right}}</button>
+          </form>
+
+          <aside class="summary" aria-label="Order summary">
+            <h2 class="h3">Your order</h2>
+            <ul class="summary__items" data-checkout-items></ul>
+            <dl class="summary__rows">
+              <div><dt>Subtotal</dt><dd data-sum-subtotal></dd></div>
+              <div data-sum-saving-row hidden><dt>Bulk saving</dt><dd data-sum-saving></dd></div>
+              <div><dt>Delivery</dt><dd>Shown before you pay</dd></div>
+            </dl>
+            <p class="summary__total"><span>Total</span><strong data-sum-total></strong></p>
+            <a class="link" href="cart.html">Change the cart</a>
+            <div class="summary__code" aria-hidden="true"><span class="barcode"></span><span>Ctrl P</span></div>
+          </aside>
+        </div>
+
+        <div class="blank blank--inline" data-checkout-empty hidden>
+          <img src="assets/img/postman-cycling.webp" width="1100" height="1187" alt="">
+          <p class="h2">Nothing to check out.</p>
+          <p class="lead">Your cart is empty. Pick a product and add your photo first.</p>
+          <a class="btn btn--large" href="create.html#pick"><span>Start creating</span>{{I:arrow-up-right}}</a>
+        </div>
+      </div>
+    </section>
+
+  </main>

@@ -1,0 +1,26 @@
+Edit image 1, a section of the Ctrl P website. Change the gallery picture, add one small illustration beside "The details.", and give the page a few print-shop touches. The product name, price, options, quantity, tiers and button keep their content.
+
+Space comes first. This section must feel open and uncrowded.
+- Text and illustration each get their own zone. They never overlap and never touch: no paw, tail, wing, box, string or dotted line crosses into a text zone.
+- Illustrations are small and simple. Leave empty background all around each one, at least a quarter of its own width on every side.
+- Keep the gaps between elements even and generous. If something does not fit comfortably, make it smaller or leave it out. Never shrink the gaps to make room.
+
+Illustration:
+1. Gallery: replace the photograph with a single poster shown straight on as a clean studio cut-out on a flat sunglow yellow panel. The poster is a real photographed object with simple flat artwork in the brand colours, filling no more than 60 percent of the panel. The three thumbnails show the same poster straight on, rolled, and in a close-up of one corner.
+2. In the grey "The details." section, in the empty space under that heading and well clear of it: Postman P bending forward to inspect the corner of a poster through a round magnifying glass, the pigeon standing on the poster's edge looking at the same spot. Small, about the height of three rows of the specification list.
+
+Subtle changes to the components, to make the section more creative. Use these and nothing more:
+- The gallery panel is held by two short strips of tape at its top corners, in place of the single strip at the top centre.
+- The specification list sits on a white paper receipt: the bottom edge cut in a zigzag, the whole list tilted one degree.
+- The selected size and paper options look like labels stuck on with tape: a yellow strip with cut ends behind each selected option.
+- A little more space between the option groups in the right column.
+
+The cast, the same in every section: Postman P (the character in images 2 and 3), a lean tan Indian street dog with pointed ears and a curled tail, a cat, and a pigeon. If a fifth image is attached, it is the approved hero illustration: match its dog, cat and pigeon exactly.
+
+Style: identical to images 2 and 3, as if the same illustrator drew it on the same day. Flat vector shapes, no outlines, chunky rounded forms with a few sharp corners, two or three flat tones per shape with hard-edged shading. No soft gradients, no airbrushed fur, no glossy highlights, no texture, no grain, no 3D, no realism. A white oval eye with a small dot pupil, a big rounded pink nose, big heavy feet. Animals are built the same way as the postman.
+
+Colour: follow image 4. Characters use only the Postman P colours: kraft tan and brown, charcoal navy, soft pink, lilac grey, white. The six brand accents (coral, sunglow, turquoise, royal blue, fuchsia, rose) appear only on printed things and tape. The only shadow allowed is one flat, pale contact shadow under each figure. No drop shadows on cards or panels.
+
+Do not change: the wording, the fonts, the brand colours, the order of the content and the overall width of the section. Add no new text beyond what is listed above, no speech bubbles, no sparkles, no confetti, no floating icons, no extra characters. If in doubt, draw less.
+
+Output: same width and framing as image 1 (it may be a little taller if the section needs the room), crisp and high resolution.

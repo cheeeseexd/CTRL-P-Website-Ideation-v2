@@ -1,0 +1,24 @@
+Edit image 1, a section of the Ctrl P website. The photograph of the two kraft boxes stays exactly as it is. Add the crew at a small scale and one piece of tape. The headline, paragraph and button do not change.
+
+Space comes first. This section must feel open and uncrowded.
+- Text and illustration each get their own zone. They never overlap and never touch: no paw, tail, wing, box, string or dotted line crosses into a text zone.
+- Illustrations are small and simple. Leave empty background all around each one, at least a quarter of its own width on every side.
+- Keep the gaps between elements even and generous. If something does not fit comfortably, make it smaller or leave it out. Never shrink the gaps to make room.
+
+Illustration:
+Two small figures beside the boxes, as if getting a big order out of the door: Postman P to the right of the lower box, leaning his shoulder into it to push, and the cat sitting upright on top of the upper box like a supervisor. They stand on the same ground as the boxes and stay entirely in the right half of the section.
+
+Subtle changes to the components, to make the section more creative. Use these and nothing more:
+- One long strip of turquoise tape with a fine white grid runs behind the boxes across the right half of the section, at a slight upward angle, its cut ends visible. The boxes sit in front of it.
+- A small white shipping label, blank except for a few grey lines and a barcode, is taped at a slight tilt in the empty space above the boxes.
+- Move the boxes a little to the right so the gap between the text and the picture is wider.
+
+The cast, the same in every section: Postman P (the character in images 2 and 3), a lean tan Indian street dog with pointed ears and a curled tail, a cat, and a pigeon. If a fifth image is attached, it is the approved hero illustration: match its dog, cat and pigeon exactly.
+
+Style: identical to images 2 and 3, as if the same illustrator drew it on the same day. Flat vector shapes, no outlines, chunky rounded forms with a few sharp corners, two or three flat tones per shape with hard-edged shading. No soft gradients, no airbrushed fur, no glossy highlights, no texture, no grain, no 3D, no realism. A white oval eye with a small dot pupil, a big rounded pink nose, big heavy feet. Animals are built the same way as the postman.
+
+Colour: follow image 4. Characters use only the Postman P colours: kraft tan and brown, charcoal navy, soft pink, lilac grey, white. The six brand accents (coral, sunglow, turquoise, royal blue, fuchsia, rose) appear only on printed things and tape. The only shadow allowed is one flat, pale contact shadow under each figure. No drop shadows on cards or panels.
+
+Do not change: the wording, the fonts, the brand colours, the order of the content and the overall width of the section. Add no new text beyond what is listed above, no speech bubbles, no sparkles, no confetti, no floating icons, no extra characters. If in doubt, draw less.
+
+Output: same width and framing as image 1 (it may be a little taller if the section needs the room), crisp and high resolution.

@@ -1,0 +1,105 @@
+  <main id="main">
+
+    <section class="page-head">
+      <div class="wrap grid">
+        <div class="page-head__copy">
+          <h1 class="display">How can we <span class="taped" style="--c:var(--royal)">help?</span></h1>
+          <p class="lead">The questions we&rsquo;re asked most, and three shortcuts if you already know what you need.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="shortcuts">
+      <div class="wrap">
+        <ul class="grid shortcuts__grid">
+          <li><a class="shortcut" href="track.html" style="--c:var(--sunglow)">{{Il:truck}}<span><b>Track an order</b>See how far your parcel has got.</span>{{I:arrow-right}}</a></li>
+          <li><a class="shortcut" href="brands.html#quote" style="--c:var(--turquoise)">{{Il:stack}}<span><b>Ask for a bulk quote</b>For 25 pieces or more.</span>{{I:arrow-right}}</a></li>
+          <li><a class="shortcut" href="#contact" style="--c:var(--rose)">{{Il:greeting}}<span><b>Write to us</b>For anything not answered here.</span>{{I:arrow-right}}</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="faq faq--page">
+      <div class="wrap grid">
+        <h2 class="h2">Ordering</h2>
+        <div class="faq__list">
+          <details class="qa" open>
+            <summary>Is there a minimum order?{{I:plus}}</summary>
+            <p>No. One poster is an order, and so is one sticker.</p>
+          </details>
+          <details class="qa">
+            <summary>How do I order?{{I:plus}}</summary>
+            <p>Pick a product, choose its size and options, then add your photo. You see it on the product before it goes in the cart.</p>
+          </details>
+          <details class="qa">
+            <summary>Can I see it before I order?{{I:plus}}</summary>
+            <p>Yes. You get a preview of your photo or art on the product before you pay.</p>
+          </details>
+        </div>
+      </div>
+      <div class="wrap grid">
+        <h2 class="h2">Photos and art</h2>
+        <div class="faq__list">
+          <details class="qa">
+            <summary>What kind of file do I need?{{I:plus}}</summary>
+            <p>A JPG or PNG straight from your phone is fine. The bigger the print, the sharper the photo needs to be.</p>
+          </details>
+          <details class="qa">
+            <summary>Can I move or crop my photo?{{I:plus}}</summary>
+            <p>Yes. After you add it, you can fill the print or show the whole photo, zoom in, turn it round and drag it into place.</p>
+          </details>
+        </div>
+      </div>
+      <div class="wrap grid">
+        <h2 class="h2">Bulk and brands</h2>
+        <div class="faq__list">
+          <details class="qa">
+            <summary>Do you print in bulk?{{I:plus}}</summary>
+            <p>Yes. The price per piece drops as the quantity goes up. For a large run, ask us for a quote.</p>
+          </details>
+          <details class="qa">
+            <summary>Do brands still get no minimum?{{I:plus}}</summary>
+            <p>Yes. Order one box to see it, then order the rest.</p>
+          </details>
+        </div>
+      </div>
+      <div class="wrap grid">
+        <h2 class="h2">Delivery</h2>
+        <div class="faq__list">
+          <details class="qa">
+            <summary>Where do you deliver?{{I:plus}}</summary>
+            <p>Anywhere in India. Whatever the pin code, we&rsquo;ll post it.</p>
+          </details>
+          <details class="qa">
+            <summary>How do I track my parcel?{{I:plus}}</summary>
+            <p>Use the order number from your confirmation on the <a class="link" href="track.html">tracking page</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--tint quote" id="contact">
+      <div class="wrap grid">
+        <div class="quote__copy">
+          <h2 class="h2">Write <span class="taped" style="--c:var(--rose)">to us.</span></h2>
+          <p class="lead">Ask about an order, a product we don&rsquo;t list yet, or anything else.</p>
+        </div>
+        <form class="block quote__form" data-demo-form novalidate>
+          <div class="block__fields">
+            <label class="input"><span>Your name</span><input type="text" name="name" autocomplete="name" required></label>
+            <label class="input"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+            <label class="input input--wide"><span>Order number, if you have one</span><input type="text" name="order" placeholder="CP-123456"></label>
+            <label class="input input--wide"><span>Your message</span><textarea name="message" rows="5" required></textarea></label>
+          </div>
+          <p class="checkout__error" role="alert" data-form-error hidden>Fill in the highlighted boxes and send it again.</p>
+          <button class="btn btn--large" type="submit"><span>Send the message</span>{{I:arrow-right}}</button>
+          <p class="block__note">Design preview: this form doesn&rsquo;t send anything yet.</p>
+          <div class="sent" role="status" data-form-sent hidden>
+            <p class="h3">Got it.</p>
+            <p>That&rsquo;s the message you&rsquo;ll see once the form is connected. Nothing has been sent.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>

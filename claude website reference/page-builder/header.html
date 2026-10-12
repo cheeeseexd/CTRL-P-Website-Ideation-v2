@@ -1,0 +1,48 @@
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <div class="wrap nav__bar">
+      <a class="nav__logo" href="./" aria-label="Ctrl P, home">
+        <img src="assets/img/logo.svg" alt="" width="582" height="206">
+      </a>
+
+      <nav class="nav__links" id="menu" aria-label="Main">
+        <div class="nav__item" data-mega>
+          <a class="nav__link" href="products.html" aria-haspopup="true" data-mega-link>
+            <span>Shop</span>
+            {{Is:chevron-down}}
+          </a>
+          <div class="mega">
+            <div class="wrap">
+              <div class="mega__grid">
+                <ul class="mega__cats">
+{{MEGA_CATS}}
+                  <li><a class="mega__cat mega__cat--all" href="products.html" style="--c:var(--ink); --on:var(--paper)"><span class="mega__icon">{{I:all}}</span><span class="mega__name">Everything we print</span>{{Is:arrow-right}}</a></li>
+                </ul>
+                <div class="mega__preview">
+{{MEGA_PANELS}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="nav__link" href="occasions.html"><span>Occasions</span></a>
+        <a class="nav__link" href="brands.html"><span>For brands</span></a>
+        <a class="nav__link" href="help.html"><span>Help</span></a>
+      </nav>
+
+      <div class="nav__tools">
+        <a class="nav__tool nav__tool--wide" href="products.html#search" aria-label="Search products">{{I:search}}</a>
+        <a class="nav__tool nav__tool--wide" href="saved.html" aria-label="Saved">{{I:heart}}<span class="nav__count" data-saved-count hidden>0</span></a>
+        <a class="nav__tool" href="cart.html" aria-label="Cart">
+          {{I:bag}}
+          <span class="nav__count" data-cart-count hidden>0</span>
+        </a>
+        <a class="btn btn--small nav__cta" href="create.html#pick">Start creating</a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu" data-nav-toggle>
+          {{I:menu}}
+          {{I:close}}
+        </button>
+      </div>
+    </div>
+  </header>

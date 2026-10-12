@@ -1,0 +1,100 @@
+/* Ctrl P design tokens
+   Source: Ctrl P brandbook (Beaver Studio), sections 03 Typography and 04 Colors. */
+
+@font-face {
+  font-family: "Integral CF";
+  src: url("../assets/fonts/IntegralCF-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("../assets/fonts/NeueRegrade-Variable.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Core: black and white carry the page */
+  --ink: #000000;
+  --paper: #ffffff;
+  --tint-1: #f4f4f4; /* 4% ink, quiet surfaces */
+  --tint-2: #e7e7e7; /* matches the studio grey of the mockup photography, so photos sit flush */
+  --ink-soft: rgba(0, 0, 0, 0.78); /* secondary text, 9.6:1 on paper */
+  --rule: rgba(0, 0, 0, 0.14);
+  --paper-soft: rgba(255, 255, 255, 0.82);
+  --rule-inverse: rgba(255, 255, 255, 0.2);
+
+  /* Accents: one per product, never as page backgrounds */
+  --coral: #f9423a; /* Warm Red C. Accent for type on white */
+  --sunglow: #ffc72c; /* 123 C. Accent for type on black */
+  --royal: #307fe2; /* 2727 C */
+  --fuchsia: #7d55c7; /* 2665 C */
+  --rose: #ef426f; /* 191 C */
+  --turquoise: #2ad2c9; /* 3252 C */
+
+  /* Type families: Integral CF for statements, Neue Regrade for everything else */
+  --font-display: "Integral CF", "Arial Black", sans-serif;
+  --font-text: "Neue Regrade", "Helvetica Neue", Arial, sans-serif;
+
+  /* Type scale. Integral CF is caps-only, so it never goes below --fs-h3 */
+  --fs-display: 13vw;
+  --fs-h2: clamp(2rem, 1.1rem + 3.6vw, 4.5rem);
+  --fs-h3: clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);
+  --fs-lead: clamp(1.125rem, 1.02rem + 0.5vw, 1.375rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-meta: 0.8125rem;
+
+  --lh-display: 0.94;
+  --lh-heading: 1;
+  --lh-lead: 1.4;
+  --lh-body: 1.55;
+
+  /* Space: 8px base */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --section: clamp(4.5rem, 2.5rem + 8vw, 9rem);
+
+  /* Grid: 4 columns on phones, 8 on tablets, 12 on desktop */
+  --cols: 4;
+  --gutter: 1rem;
+  --margin: 1.25rem;
+  --max: 84rem;
+
+  /* Graph paper, from the brandbook pattern */
+  --grid-cell: 1.5rem;
+  --grid-line: rgba(0, 0, 0, 0.07);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-stick: cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+@media (min-width: 45rem) {
+  :root {
+    --cols: 8;
+    --gutter: 1.25rem;
+    --margin: 2rem;
+    --fs-display: 11vw;
+  }
+}
+
+@media (min-width: 67.5rem) {
+  :root {
+    --cols: 12;
+    --gutter: 1.5rem;
+    --margin: clamp(2.5rem, 4.4vw, 4.5rem);
+    --fs-display: clamp(4.5rem, 7.3vw, 7.25rem);
+  }
+}

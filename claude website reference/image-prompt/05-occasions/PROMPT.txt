@@ -1,0 +1,37 @@
+Edit image 1, a section of the Ctrl P website. The four photographs keep their content exactly. Present them as real prints pinned up by the crew. The heading and the short paragraph beside it do not change.
+
+Space comes first. This section must feel open and uncrowded.
+- Text and illustration each get their own zone. They never overlap and never touch: no paw, tail, wing, box, string or dotted line crosses into a text zone.
+- Illustrations are small and simple. Leave empty background all around each one, at least a quarter of its own width on every side.
+- Keep the gaps between elements even and generous. If something does not fit comfortably, make it smaller or leave it out. Never shrink the gaps to make room.
+
+Illustration:
+Two small figures only, both sitting on the outside of a photo, never over its subject:
+1. The pigeon perched on the top edge of the tall left-hand photo, looking down into it.
+2. The cat sitting on the top edge of the bottom-right photo, its tail hanging just over the corner.
+
+Subtle changes to the components, to make the section more creative. Use these and nothing more:
+- Give every photo a thin white border, like a photographic print.
+- Tilt each print slightly and differently, between one and two degrees, and widen the gaps between them so no two touch.
+- Each coloured category label becomes a strip of tape that holds its print to the page: it sits half on the print and half off, at the top-left corner, with cut ends.
+- Each caption sits on a small white paper label overlapping the bottom edge of its print, instead of a block inside the photo.
+
+The cast, the same in every section: Postman P (the character in images 2 and 3), a lean tan Indian street dog with pointed ears and a curled tail, a cat, and a pigeon. If a fifth image is attached, it is the approved hero illustration: match its dog, cat and pigeon exactly.
+
+Style: identical to images 2 and 3, as if the same illustrator drew it on the same day. Flat vector shapes, no outlines, chunky rounded forms with a few sharp corners, two or three flat tones per shape with hard-edged shading. No soft gradients, no airbrushed fur, no glossy highlights, no texture, no grain, no 3D, no realism. A white oval eye with a small dot pupil, a big rounded pink nose, big heavy feet. Animals are built the same way as the postman.
+
+Colour: follow image 4. Characters use only the Postman P colours: kraft tan and brown, charcoal navy, soft pink, lilac grey, white. The six brand accents (coral, sunglow, turquoise, royal blue, fuchsia, rose) appear only on printed things and tape. The only shadow allowed is one flat, pale contact shadow under each figure. No drop shadows on cards or panels.
+
+Do not change: the wording, the fonts, the brand colours, the order of the content and the overall width of the section. Add no new text beyond what is listed above, no speech bubbles, no sparkles, no confetti, no floating icons, no extra characters. If in doubt, draw less.
+
+Output: same width and framing as image 1 (it may be a little taller if the section needs the room), crisp and high resolution.
+
+--- Second prompt: four new photographs, so no photo is used twice on the site ---
+Give it image 1 of this folder only.
+
+Four separate photographs in the same warm, natural, slightly moody style as the photos in the reference image. Real people and places in urban India, age 18 to 28, candid, nobody looking at the lens. Shot on a 35mm lens, soft window or evening light. Simple, uncluttered frames with one clear subject and plenty of calm background.
+1. Trips: a friend seen from behind at a hill-station cafe wearing an oversized white tee with a colourful print on the back.
+2. Rakhi: a laptop lid and a water bottle covered in bright die-cut stickers, a rakhi thread on a wrist at the edge of the frame.
+3. Farewells: hands passing a printed cream tote bag across a college canteen table.
+4. Birthdays: a large poster being unrolled on a bed, wrapping paper and ribbon pushed to one side.
+The printed artwork on each product is simple flat shapes in coral, sunglow, turquoise, royal blue, fuchsia and rose. No readable text and no logos; the logo is added afterwards.

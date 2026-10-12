@@ -1,0 +1,57 @@
+  <main id="main">
+
+    <section class="cart placed">
+      <div class="wrap">
+        <ol class="trail" aria-label="Checkout steps">
+          <li class="is-done"><i>1</i>Cart</li>
+          <li class="is-done"><i>2</i>Details</li>
+          <li class="is-active" aria-current="step"><i>3</i>Placed</li>
+        </ol>
+
+        <div class="grid placed__grid" data-placed hidden>
+          <div class="placed__copy">
+            <h1 class="display">It&rsquo;s with <span class="taped">Postman P.</span></h1>
+            <p class="lead">Thanks, <span data-order-name>friend</span>. Your order is in. Keep the number below; it&rsquo;s how you track the parcel.</p>
+            <div class="placed__actions">
+              <a class="btn btn--large" href="track.html" data-order-track><span>Track this order</span>{{I:arrow-right}}</a>
+              <a class="link" href="products.html">Print something else</a>
+            </div>
+            <img class="placed__postman" src="assets/img/postman-cycling.webp" width="1100" height="1187" alt="Postman P cycling off with a bag full of prints">
+          </div>
+
+          <aside class="summary placed__ticket" aria-label="Your order">
+            <p class="placed__label">Order number</p>
+            <p class="placed__no" data-order-no></p>
+            <ul class="summary__items" data-order-items></ul>
+            <dl class="summary__rows">
+              <div><dt>Going to</dt><dd data-order-to></dd></div>
+              <div><dt>Paying by</dt><dd data-order-pay></dd></div>
+            </dl>
+            <p class="summary__total"><span>Total</span><strong data-order-total></strong></p>
+            <div class="summary__code" aria-hidden="true"><span class="barcode"></span><span>Ctrl P</span></div>
+          </aside>
+        </div>
+
+        <div class="blank blank--inline" data-order-none hidden>
+          <img src="assets/img/postman-cycling.webp" width="1100" height="1187" alt="">
+          <p class="h2">No order to show.</p>
+          <p class="lead">This page appears after you place an order. If you have an order number, you can track it.</p>
+          <a class="btn btn--large" href="track.html"><span>Track an order</span>{{I:arrow-right}}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What happens next -->
+    <section class="how how--next">
+      <div class="wrap">
+        <h2 class="h2">What happens <span class="taped" style="--c:var(--ink)">next.</span></h2>
+        <ol class="stubs">
+          <li class="stub is-done"><span class="stub__icon">{{Il:check}}</span><span class="stub__no">01</span><h3 class="h3 stub__title">Ordered</h3><p>We have your photo and your details.</p></li>
+          <li class="stub"><span class="stub__icon">{{Il:printer}}</span><span class="stub__no">02</span><h3 class="h3 stub__title">Printed</h3><p>Made to order, one piece or many.</p></li>
+          <li class="stub"><span class="stub__icon">{{Il:box}}</span><span class="stub__no">03</span><h3 class="h3 stub__title">Packed</h3><p>Labelled and taped shut.</p></li>
+          <li class="stub"><span class="stub__icon">{{Il:truck}}</span><span class="stub__no">04</span><h3 class="h3 stub__title">Posted</h3><p>On its way to the address you gave.</p></li>
+        </ol>
+      </div>
+    </section>
+
+  </main>

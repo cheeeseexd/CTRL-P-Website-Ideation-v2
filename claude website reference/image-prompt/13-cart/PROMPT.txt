@@ -1,0 +1,40 @@
+Edit image 1, a section of the Ctrl P website. Make the order summary feel like a receipt that has just been printed, and add one small figure. The items, quantities, prices and button keep their content.
+
+Space comes first. This section must feel open and uncrowded.
+- Text and illustration each get their own zone. They never overlap and never touch: no paw, tail, wing, box, string or dotted line crosses into a text zone.
+- Illustrations are small and simple. Leave empty background all around each one, at least a quarter of its own width on every side.
+- Keep the gaps between elements even and generous. If something does not fit comfortably, make it smaller or leave it out. Never shrink the gaps to make room.
+
+Illustration:
+One small figure at the foot of the order summary, beside the barcode, about as tall as the barcode and the checkout button together: the cat sitting upright, holding the torn-off end of the receipt in its mouth. It does not overlap any line of the summary.
+
+Subtle changes to the components, to make the section more creative. Use these and nothing more:
+- The order summary is a strip of white receipt paper: the top edge straight, the bottom edge torn in a zigzag, tilted one degree, with a thin dashed line above the total.
+- Each line item's thumbnail is a small print held by a short strip of tape at its top, tilted slightly.
+- The "bulk saving" note on the second item is a small turquoise tape flag with cut ends.
+- More space between the two line items, and between the list and the summary.
+
+The cast, the same in every section: Postman P (the character in images 2 and 3), a lean tan Indian street dog with pointed ears and a curled tail, a cat, and a pigeon. If a fifth image is attached, it is the approved hero illustration: match its dog, cat and pigeon exactly.
+
+Style: identical to images 2 and 3, as if the same illustrator drew it on the same day. Flat vector shapes, no outlines, chunky rounded forms with a few sharp corners, two or three flat tones per shape with hard-edged shading. No soft gradients, no airbrushed fur, no glossy highlights, no texture, no grain, no 3D, no realism. A white oval eye with a small dot pupil, a big rounded pink nose, big heavy feet. Animals are built the same way as the postman.
+
+Colour: follow image 4. Characters use only the Postman P colours: kraft tan and brown, charcoal navy, soft pink, lilac grey, white. The six brand accents (coral, sunglow, turquoise, royal blue, fuchsia, rose) appear only on printed things and tape. The only shadow allowed is one flat, pale contact shadow under each figure. No drop shadows on cards or panels.
+
+Do not change: the wording, the fonts, the brand colours, the order of the content and the overall width of the section. Add no new text beyond what is listed above, no speech bubbles, no sparkles, no confetti, no floating icons, no extra characters. If in doubt, draw less.
+
+Output: same width and framing as image 1 (it may be a little taller if the section needs the room), crisp and high resolution.
+
+--- Second prompt: empty cart illustration ---
+Give it the two Postman P images and the colours image only.
+
+One spot illustration for an empty shopping cart: Postman P holding his black backpack upside down and shaking it, nothing falling out except one small coral sticker. The dog sits beside him looking up into the open bag, head tilted. Landscape, about 3:2.
+
+Keep every illustration simple and small within its space, with clear white all around it. Nothing touches the edge of the picture or a neighbouring illustration.
+
+The cast, the same in every section: Postman P (the character in images 1 and 2), a lean tan Indian street dog with pointed ears and a curled tail, a cat, and a pigeon. If a fourth image is attached, it is the approved hero illustration: match its dog, cat and pigeon exactly.
+
+Style: identical to images 1 and 2, as if the same illustrator drew it on the same day. Flat vector shapes, no outlines, chunky rounded forms with a few sharp corners, two or three flat tones per shape with hard-edged shading. No soft gradients, no airbrushed fur, no glossy highlights, no texture, no grain, no 3D, no realism. A white oval eye with a small dot pupil, a big rounded pink nose, big heavy feet. Animals are built the same way as the postman.
+
+Colour: follow image 3. Characters use only the Postman P colours: kraft tan and brown, charcoal navy, soft pink, lilac grey, white. The six brand accents (coral, sunglow, turquoise, royal blue, fuchsia, rose) appear only on printed things and tape. The only shadow allowed is one flat, pale contact shadow under each figure. No drop shadows on cards or panels.
+
+Plain white background, nothing else in the picture, no text. High resolution.

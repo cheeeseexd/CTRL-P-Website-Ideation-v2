@@ -1,0 +1,46 @@
+  <main id="main">
+
+    <section class="cart">
+      <div class="wrap">
+        <ol class="trail" aria-label="Checkout steps">
+          <li class="is-active" aria-current="step"><i>1</i>Cart</li>
+          <li><i>2</i>Details</li>
+          <li><i>3</i>Placed</li>
+        </ol>
+        <h1 class="display">Your <span class="taped">cart.</span></h1>
+
+        <!-- Filled by js/main.js from the cart saved in this browser -->
+        <div class="grid cart__grid" data-cart hidden>
+          <div class="cart__items">
+            <ul data-cart-items></ul>
+            <a class="cart__more" href="products.html">{{I:plus}}<span>Add something else</span></a>
+          </div>
+
+          <aside class="summary" aria-label="Order summary">
+            <h2 class="h3">Order summary</h2>
+            <dl class="summary__rows">
+              <div><dt>Pieces</dt><dd data-sum-count>0</dd></div>
+              <div><dt>Subtotal</dt><dd data-sum-subtotal></dd></div>
+              <div data-sum-saving-row hidden><dt>Bulk saving</dt><dd data-sum-saving></dd></div>
+              <div><dt>Delivery</dt><dd>Shown before you pay</dd></div>
+            </dl>
+            <p class="summary__total"><span>Total</span><strong data-sum-total></strong></p>
+            <a class="btn btn--block btn--large" href="checkout.html"><span>Go to checkout</span>{{I:arrow-right}}</a>
+            <ul class="ticks ticks--row">
+              <li>{{I:check}}No minimum order</li>
+              <li>{{I:check}}Ships across India</li>
+            </ul>
+            <div class="summary__code" aria-hidden="true"><span class="barcode"></span><span>Ctrl P</span></div>
+          </aside>
+        </div>
+
+        <div class="blank blank--inline" data-cart-empty hidden>
+          <img src="assets/img/postman-cycling.webp" width="1100" height="1187" alt="">
+          <p class="h2">Nothing in here yet.</p>
+          <p class="lead">Postman P has an empty bag. Pick a product and give him something to deliver.</p>
+          <a class="btn btn--large" href="create.html#pick"><span>Start creating</span>{{I:arrow-up-right}}</a>
+        </div>
+      </div>
+    </section>
+
+  </main>

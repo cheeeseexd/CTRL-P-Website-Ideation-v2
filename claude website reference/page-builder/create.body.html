@@ -1,0 +1,128 @@
+  <main id="main">
+
+    <!-- Start creating without a product in hand: choose one first. Shown by js/flow.js. -->
+    <section class="create create--pick" data-create-pick hidden>
+      <div class="wrap">
+        <h1 class="display">What are we <span class="taped">making?</span></h1>
+        <p class="lead">Pick a product. You design it on the next screen and see it on the product before anything goes in the cart.</p>
+        <p class="create__resume" data-create-resume hidden><a class="link" href="create.html">Carry on with your <span data-resume-name></span> {{Is:arrow-right}}</a></p>
+        <ul class="grid kit__grid">
+{{PICKS}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Make it: design, photos, layout and text, preview. Filled by js/flow.js from the product and options chosen. -->
+    <section class="create" data-create hidden>
+      <div class="wrap">
+        <a class="back" href="products.html" data-create-back>{{Is:arrow-right}}<span data-create-backname>Back to the product</span></a>
+
+        <div class="grid create__grid">
+          <div class="create__stage">
+            <div class="artboard" data-artboard>
+              <span class="artboard__tape" aria-hidden="true"></span>
+              <div class="artboard__art" data-art>
+                <img alt="" data-art-img hidden>
+                <p class="artboard__empty" data-art-empty>{{Il:photo}}<span>Your photo goes here</span></p>
+              </div>
+              <p class="artboard__caption" data-art-caption hidden></p>
+            </div>
+            <p class="create__caption"><b data-create-area>Print area</b><span data-create-opts></span></p>
+          </div>
+
+          <div class="create__panel">
+            <h1 class="h2 create__title">Make your <span class="taped" data-create-name>print.</span></h1>
+
+            <ol class="steps steps--4" data-steps>
+              <li class="is-active"><button type="button" data-goto="1"><i>1</i>Design</button></li>
+              <li><button type="button" data-goto="2"><i>2</i>Photos</button></li>
+              <li><button type="button" data-goto="3" disabled><i>3</i>Layout</button></li>
+              <li><button type="button" data-goto="4" disabled><i>4</i>Preview</button></li>
+            </ol>
+
+            <!-- Step 1: design -->
+            <div class="create__step" data-step-panel="1">
+              <h2 class="h3">Pick a design, or start plain</h2>
+              <p>A design sets the look and the first words. Everything stays editable.</p>
+              <div class="designs" role="group" aria-label="Design">
+                <button class="design" type="button" aria-pressed="true" data-design="plain"><span class="design__mock"><i></i></span><b>Plain</b></button>
+                <button class="design" type="button" aria-pressed="false" data-design="white"><span class="design__mock design__mock--white"><i></i></span><b>Instant</b></button>
+                <button class="design" type="button" aria-pressed="false" data-design="black"><span class="design__mock design__mock--black"><i></i></span><b>Night</b></button>
+              </div>
+              <p class="create__small">Placeholder designs. Ctrl P will draw the real ones.</p>
+            </div>
+
+            <!-- Step 2: photos -->
+            <div class="create__step" data-step-panel="2" hidden>
+              <h2 class="h3">Add your <span data-photo-word>photo</span></h2>
+              <p data-photo-hint>One photo or piece of art is all it needs. It shows on the preview straight away.</p>
+              <div class="shots" data-shots>
+                <label class="shots__add" data-shots-add>
+                  {{I:upload}}
+                  <span data-add-label>Add a photo</span>
+                  <input class="visually-hidden" type="file" accept="image/*" multiple data-file>
+                </label>
+              </div>
+              <p class="create__small"><span data-photo-count>0 of 1 added.</span> JPG or PNG. Your photos stay on this device until you order.</p>
+              <button class="link" type="button" data-sample>No photos handy? Use a sample</button>
+            </div>
+
+            <!-- Step 3: layout and text -->
+            <div class="create__step" data-step-panel="3" hidden>
+              <h2 class="h3">Make it yours</h2>
+              <p>Every change shows on the preview straight away. Drag the photo to move it.</p>
+              <div class="field">
+                <span class="field__label">Border</span>
+                <div class="opts">
+                  <label class="opt"><input type="radio" name="border" value="plain" checked><span>None</span></label>
+                  <label class="opt"><input type="radio" name="border" value="white"><span>White</span></label>
+                  <label class="opt"><input type="radio" name="border" value="black"><span>Black</span></label>
+                </div>
+              </div>
+              <label class="input" data-caption-field>
+                <span class="input__top"><span>Caption, if you want one</span><i data-caption-count>0/22</i></span>
+                <input type="text" maxlength="22" placeholder="Diwali 2026" data-caption>
+              </label>
+              <div class="field">
+                <span class="field__label">How the photo sits</span>
+                <div class="opts">
+                  <label class="opt"><input type="radio" name="fit" value="cover" checked><span>Fill the print</span></label>
+                  <label class="opt"><input type="radio" name="fit" value="contain"><span>Show the whole photo</span></label>
+                </div>
+              </div>
+              <label class="field">
+                <span class="field__label">Zoom</span>
+                <input class="range" type="range" min="1" max="2.5" step="0.05" value="1" data-zoom>
+              </label>
+              <div class="create__row">
+                <button class="btn btn--outline btn--small" type="button" data-rotate><span>Turn it round</span></button>
+                <button class="btn btn--outline btn--small" type="button" data-reset><span>Start again</span></button>
+              </div>
+            </div>
+
+            <!-- Step 4: preview -->
+            <div class="create__step" data-step-panel="4" hidden>
+              <h2 class="h3">Happy with it?</h2>
+              <dl class="summary__rows create__check">
+                <div><dt>Making</dt><dd data-check-name></dd></div>
+                <div><dt>Options</dt><dd data-check-opts></dd></div>
+                <div><dt>How many</dt><dd data-check-qty></dd></div>
+                <div><dt>Each</dt><dd data-check-each></dd></div>
+              </dl>
+              <p class="summary__total"><span>Price</span><strong data-check-total></strong></p>
+              <a class="link" href="#" data-create-change>Change size or options</a>
+              <button class="btn btn--outline create__share" type="button" data-share><span>Share preview</span></button>
+              <p class="create__small" data-share-note>Send it to someone so they can say yes before you order. For now this shares a link to the product, not the picture.</p>
+            </div>
+
+            <div class="create__nav">
+              <button class="btn btn--outline" type="button" data-prev hidden><span>Back</span></button>
+              <button class="btn btn--large" type="button" data-next><span data-next-label>Next: photos</span>{{I:arrow-right}}</button>
+            </div>
+            <p class="create__saved">{{I:check}}Your choices are saved on this device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
